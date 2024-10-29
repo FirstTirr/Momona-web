@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momona</title>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googlepis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fontsgoogleapis.com/css2?familyPoppins:ital,wgh@o,100;0,300;0,400;0,700;1,700&display=swap"
+    rel="stylesheet" />
+
+  <!-- icon -->
+  <script src="https://unpkg.com/feather-icons"></script>
+
+  <!-- AlpineJS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- App -->
+  <script src="js/app.js"></script>
+</head>
+
+<body>
+  <!-- navbar start-->
+  <nav class="navbar">
+    <a href="#" class="navbar-logo">Mom<span>ona</span></a>
+    <div class="navbar-nav">
+      <a href="#Home">Home</a>
+      <a href="#about">Tentang kami</a>
+      <a href="#produk">Produk</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="navbar-extra">
+      <a href="#" id="search-button"><i data-feather="search"></i>
+        <a href="#" id="shopping-cart-button"><i data-feather="shopping-cart"></i>
+          <a href="#" id="hamburger-menu"><i data-feather="menu"></i>
+          </a>
+    </div>
+
+    <!-- search form start -->
+    <div class="search-form">
+      <input type="search" id="search-box" placeholder="search here...">
+      <label for="search-box"><i data-feather="search"></i></label>
+    </div>
+    <!-- search form start -->
+
+    <!-- keranjang belanja start-->
+    <div class="shopping-cart">
+      <div class="cart-item">
+        <img src="menu/baju1.JPEG" alt="baju1">
+        <div class="item-detail">
+          <h3>baju 1</h3>
+          <div class="item-price">IDR 250K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+      <div class="cart-item">
+        <img src="menu/baju2.JPEG" alt="baju2">
+        <div class="item-detail">
+          <h3>baju 1</h3>
+          <div class="item-price">IDR 250K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+      <div class="cart-item">
+        <img src="menu/baju3.JPEG" alt="baju3">
+        <div class="item-detail">
+          <h3>baju 1</h3>
+          <div class="item-price">IDR 250K</div>
+        </div>
+        <i data-feather="trash-2" class="remove-item"></i>
+      </div>
+    </div>
+    <!-- keranjang belanja end -->
+
+  </nav>
+  <!-- navbar end -->
+
+  <!-- hero section srart -->
+  <section class="hero" id="Home">
+    <main class="content">
+      <h1>Tampil Modis Dengan Produk <span>Momona</span></h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, quo.</p>
+    </main>
+  </section>
+  <!-- hero section end -->
+
+  <!-- about section start -->
+  <section class="about" id="about">
+    <h2><span>Tentang</span> Kami</h2>
+
+    <div class="row">
+      <div class="about-img">
+        <img src="img/tentang-momona.JPEG" alt="tentang kami">
+      </div>
+      <div class="content">
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur totam expedita praesentium sint ut.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur totam expedita praesentium sint ut.</p>
+      </div>
+    </div>
+  </section>
+  <!-- about section end -->
+
+  <!-- menu section start -->
+  <section class="produk" id="produk" x-data="produk">
+    <h2><span>produk</span> Kami</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, quia?</p>
+
+    <div class="row">
+      <template x-for="(item, index) in items" x-key="index">
+        <div class="produk-card">
+          <div class="produk-icons">
+            <a href="#">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#eye" />
+              </svg>
+            </a>
+            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
+          </div>
+          <div class="produk-image">
+            <img :src="`menu/${item.img}`" :alt="item.name">
+          </div>
+          <div class="produk-content">
+            <h3 x-text="item.name"></h3>
+            <div class="produk-stars">
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+              <i data-feather="star" class="star-full"></i>
+            </div>
+            <div class="produk-price"><span x-text="item.price"></span></div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </section>
+  <!-- menu section end -->
+
+  <!-- contact section start -->
+  <setion id="contact" class="contact">
+    <h2><span>kontak</span> Kami</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. A, eius pariatur?</p>
+
+    <div class="row">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d312.67604979493984!2d100.6398098353352!3d-0.23290002963326845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sid!4v1728813834688!5m2!1sen!2sid"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="map"></iframe>
+      <form action="">
+        <div class="input-group">
+          <i data-feather="user"></i>
+          <input type="text" placeholder="nama">
+        </div>
+        <div class="input-group">
+          <i data-feather="mail"></i>
+          <input type="text" placeholder="email">
+        </div>
+        <div class="input-group">
+          <i data-feather="phone"></i>
+          <input type="text" placeholder="no handphone">
+        </div>;
+        <button type="submit" class="button">kirim pesan</button>
+      </form>
+    </div>
+  </setion>
+  <!-- contact section end -->
+
+  <!-- footer start -->
+  <footer>
+    <div class="social">
+      <a href="#"><i data-feather="instagram"></i></a>
+      <a href="#"><i data-feather="twitter"></i></a>
+      <a href="#"><i data-feather="facebook"></i></a>
+    </div>
+
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">Tentang Kami</a>
+      <a href="#produk">Produk</a>
+      <a href="#contact">Kontak</a>
+    </div>
+
+    <div class="credit">
+      <p>created by <a href="https://instagram.com/tirr_adzan">fathiradzansatia</a>. | &copy; 2024.</p>
+    </div>
+  </footer>
+  <!-- footer end -->
+
+  <!-- modal box item detail start -->
+  <div class="modal" id="item-detail-modal">
+    <div class="modal-container">
+      <a href="#" class="close-icon"><i data-feather="x-circle"></i></a>
+      <div class="modal-content">
+        <img src="menu/baju1.JPEG" alt="baju 1">
+        <div class="produk-content">
+          <h3>baju 1</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae nemo repudiandae ipsum voluptates dolor
+            eveniet hic, aut suscipit delectus itaque odio mollitia vero aliquid asperiores omnis atque? Eaque, nemo
+            eligendi.</p>
+          <div class="produk-stars">
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+            <i data-feather="star" class="star-full"></i>
+          </div>
+          <div class="produk-price">IDR 280K <span>IDR 300k</span></div>
+          <a href="#"><i data-feather="shopping-cart"></i> <span>add to shopping cart</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal box item detail end -->
+
+  <!-- feather icons -->
+  <script>
+    feather.replace();
+  </script>
+
+  <!-- my js -->
+  <script src=js/script.js></script>
+</body>
+
+</html>
