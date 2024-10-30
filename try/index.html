@@ -77,7 +77,6 @@
       </div>
     </div>
     <!-- keranjang belanja end -->
-
   </nav>
   <!-- navbar end -->
 
@@ -119,10 +118,15 @@
             <a href="#">
               <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#shopping-cart" />
+              </svg>
+            </a>
+            <a href="" class="item-detail-button">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
                 <use href="img/feather-sprite.svg#eye" />
               </svg>
             </a>
-            <a href="" class="item-detail-button"><i data-feather="eye"></i></a>
           </div>
           <div class="produk-image">
             <img :src="`menu/${item.img}`" :alt="item.name">
