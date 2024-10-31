@@ -358,7 +358,7 @@ body {
 
 .produk .produk-stars {
   font-size: 1.7rem;
-  padding: 0.8rem;
+  padding: 0.9rem;
   color: var(--primary);
 }
 
@@ -370,12 +370,6 @@ body {
   font-size: 1.3rem;
   font-weight: bold;
   color: #fff;
-}
-
-.produk .produk-price span {
-  text-decoration: line-through;
-  font-weight: lighter;
-  font-size: 1rem;
 }
 
 /* contact section */

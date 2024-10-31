@@ -9,3 +9,13 @@ document.addEventListener("alpine:init", () => {
     ],
   }));
 });
+
+// konversi mata uang ke rp
+
+const rupiah = (number) => {
+  return new Intl.NumberFormat('id-ID', {
+    style: 'currency',
+    currency: 'IDR',
+    minimumFractionDigits: 0,
+  }).format('number');
+};

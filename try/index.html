@@ -121,7 +121,7 @@
                 <use href="img/feather-sprite.svg#shopping-cart" />
               </svg>
             </a>
-            <a href="" class="item-detail-button">
+            <a href="#" class="item-detail-button">
               <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <use href="img/feather-sprite.svg#eye" />
@@ -134,13 +134,25 @@
           <div class="produk-content">
             <h3 x-text="item.name"></h3>
             <div class="produk-stars">
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
-              <i data-feather="star" class="star-full"></i>
+              <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
+              <svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#star" />
+              </svg><svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#star" />
+              </svg><svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#star" />
+              </svg><svg width="24" height="24" fill="currentColor" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <use href="img/feather-sprite.svg#star" />
+              </svg>
             </div>
-            <div class="produk-price"><span x-text="item.price"></span></div>
+            <div class="produk-price"><span x-text="rupiah( item.price)"></span></div>
           </div>
         </div>
       </template>
