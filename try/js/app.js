@@ -8,14 +8,47 @@ document.addEventListener("alpine:init", () => {
       { id: 5, name: "baju lima", img: "baju5.jpg", price: 210000 },
     ],
   }));
+
+  Alpine.store('cart', {
+    items: [],
+    total: 0,
+    quantity: 0,
+    add(newItem) {
+      // cek ada produk yang sama di cart
+      const cartItem = this.item.find((item) => item.id === newItem.id);
+
+      // jika belum ada
+      if (!cartItem) {
+        this.items.push({ ...newItem, quantity: 1, total: newItem.price });
+        this.quantity++;
+        this.total += newItem.price;
+      } else {
+        // jika barang sudah ada di cart
+        this.items = this.items.map((item) => {
+          // jika barang tidak sama/berbeda
+          if (item.id !== newItem.id) {
+            return item;
+          } else {
+            // jika barang sudah ada di cart/sama dengan di cart
+            item.quantity++;
+            item.total = item.price * item.quantity;
+            this.quantity++;
+            this.total += item.price;
+            return item;
+          }
+        });
+      }
+    },
+  });
 });
 
 // konversi mata uang ke rp
 
 const rupiah = (number) => {
+  const parsedNumber = parseInt(number, 10);
   return new Intl.NumberFormat('id-ID', {
     style: 'currency',
     currency: 'IDR',
     minimumFractionDigits: 0,
-  }).format('number');
+  }).format(parsedNumber);
 };
